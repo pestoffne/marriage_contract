@@ -40,8 +40,8 @@ function generateRegistrationNumber(address spouse1, address spouse2) pure retur
 
 
 contract Marriage is OwnerDestructable {
-    mapping (address /*proposed keccac256*/ => address[] /*proposers*/) private _proposed_marriages;
-    mapping (address /*spouse keccac256*/ => Couple /*spouse1, spouse2*/) public married_couples;
+    mapping (address /*proposed keccak256*/ => address[] /*proposers*/) private _proposed_marriages;
+    mapping (address /*spouse keccak256*/ => Couple /*spouse1, spouse2*/) public married_couples;
 
     event proposedMarriage(address proposer, address proposed);
     event acceptedMarriage(address proposer, address proposed);
