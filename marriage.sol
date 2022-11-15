@@ -67,10 +67,12 @@ contract Marriage is OwnerDestructable {
         emit acceptedMarriage(proposer, msg.sender);
     }
 
+    // MethodID: 0xf328f74e
     function verifyCoupleIsMarried(address address1, address address2) public view returns (bool) {
         return contains(married_couples[address1], address2);
     }
 
+    // MethodID: 0x6de2e6c0
     function verifyAddressIsMarried(address address1) public view returns (bool) {
         return married_couples[address1].spouse1 != address(0);
     }
