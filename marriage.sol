@@ -17,6 +17,7 @@ abstract contract OwnerDestructable {
         selfdestruct(owner);
     }
 
+    // MethodID: 0xf2fde38b
     function transferOwnership(address payable newOwner) public onlyOwner {
         owner = newOwner;
     }
@@ -47,6 +48,7 @@ contract Marriage is OwnerDestructable {
     event acceptedMarriage(address proposer, address proposed);
     //event rejectMarriage(address proposer, address proposed);
 
+    // MethodID: 0xbca9fac6
     function proposeMarriage(address proposed) public {
         require(!verifyAddressIsMarried(proposed), "Specified address is already married.");
         require(!verifyAddressIsMarried(msg.sender), "Your address is already married.");
@@ -56,6 +58,7 @@ contract Marriage is OwnerDestructable {
         emit proposedMarriage(msg.sender, proposed);
     }
 
+    // MethodID: 0x69670f4a
     function acceptMarriage(address proposer) public {
         require(!verifyAddressIsMarried(proposer), "Specified address is already married.");
         require(!verifyAddressIsMarried(msg.sender), "Your address is already married.");
